@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="colorMain">#2cbafb</color>
+    <color name="colorBackground">#EAEAEA</color>
+    <color name="colorMainListTitle">#333</color>
+    <color name="radio_button_selected_color">#ff33b5e5</color>
+    <color name="radio_button_unselected_color">#e0e0e0</color>
+
+
+    <color name="popup_main_background">#b0000000</color>
+    <color name="black">#000000</color>
+    <color name="choose_eara_item_press_color">#f4f4f4</color>
+    <color name="white">#ffffff</color>
+    <color name="no_color">#00000000</color>
+    <color name="Orange">#FF8800</color>
+    <color name="btn_notselect">#999999</color>
+    <color name="title_color">#333333</color>
+</resources>

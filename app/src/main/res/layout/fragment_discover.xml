@@ -1,0 +1,150 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".fragment.DiscoverFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- TODO: Update blank fragment layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@color/colorMain"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/colorMain"
+                android:drawableRight="@drawable/small_triangle"
+                android:text="成都"
+                android:textColor="#fff"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/search_search_tv"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="7dp"
+                android:background="@drawable/rounded_editview"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/search_button"
+                android:gravity="center_vertical"
+                android:hint="输入相关搜索内容"
+                android:imeOptions="actionSearch"
+                android:singleLine="true"
+                android:textColorHint="#999"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/mScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewpager"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" />
+                    <LinearLayout
+                        android:id="@+id/pointgroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal"/>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@color/colorBackground" />
+
+                <com.mrkang.since.cards.widget.WrapContentHeightViewPager
+                    android:id="@+id/vp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </com.mrkang.since.cards.widget.WrapContentHeightViewPager>
+
+                <LinearLayout
+                    android:id="@+id/pointgroup2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal"/>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@color/colorBackground" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorBackground" />
+
+                <ImageView
+                    android:id="@+id/main_playbigiv"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/banner_bg"
+
+                    android:scaleType="fitXY"
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="12dp"
+                    android:background="@color/colorBackground"
+                    android:visibility="gone" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:layout_marginLeft="8dp"
+                        android:gravity="center_vertical"
+                        android:text="猜你喜欢" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorBackground" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+
+        </ScrollView>
+    </LinearLayout>
+</RelativeLayout>
