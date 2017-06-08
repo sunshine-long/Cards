@@ -1,6 +1,7 @@
 package com.mrkang.since.cards.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -16,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.mrkang.since.cards.R;
+import com.mrkang.since.cards.activity.WebViewActivity;
 import com.mrkang.since.cards.adpter.MainBankListAdpter;
 import com.mrkang.since.cards.adpter.MyViewPageAdpter;
 import com.mrkang.since.cards.base.BaseFragment;
@@ -45,7 +47,6 @@ public class MainFragment  extends BaseFragment implements MainContract.View{
     TextView textView;
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
-    Unbinder unbinder1;
     @BindView(R.id.pointgroup)
     LinearLayout pointgroup;
 
@@ -64,7 +65,7 @@ public class MainFragment  extends BaseFragment implements MainContract.View{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = View.inflate(getContext(), R.layout.fragment_main, null);
-        unbinder1 = ButterKnife.bind(this, view);
+        unbinder = ButterKnife.bind(this, view);
         initRecyclerView();
         initHandler();
         mpresenter.getHomeData(getContext());
@@ -111,10 +112,9 @@ public class MainFragment  extends BaseFragment implements MainContract.View{
                 @Override
                 public void onClick(View v) {
                     // TODO Auto-generated method stub
-                   /* Intent intent = new Intent(getActivity(), WebActivity.class);
+                    Intent intent = new Intent(getActivity(), WebViewActivity.class);
                     intent.putExtra("url", play.getUrl());
-                    startActivity(intent);*/
-                    showShortToast("点了viewpager");
+                    startActivity(intent);
                 }
             });
             imageLoader.displayImage(play.getImage(), img, ImageLoaderOptions.options());

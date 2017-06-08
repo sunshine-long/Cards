@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.mrkang.since.cards.base.BaseObserver;
 import com.mrkang.since.cards.bean.DiscoverDatasBean;
+import com.mrkang.since.cards.bean.MainShopListBean;
 import com.mrkang.since.cards.contract.DiscoverContract;
 import com.mrkang.since.cards.model.DiscoverModel;
 
@@ -27,11 +28,22 @@ public class DiscoverPresenter implements DiscoverContract.Presenter {
         discoverModel.getDiscoverDatas(context, new BaseObserver<DiscoverDatasBean>(context) {
             @Override
             protected void onSuccess(DiscoverDatasBean discoverDatasBean) {
-                discoverView.setDisCoverDatas(discoverDatasBean);
                 discoverView.initViwPager(discoverDatasBean.getPromotions());
+                discoverView.initGridViewPage(discoverDatasBean.getCategories());
+                discoverView.initShopListView(discoverDatasBean.getShops());
             }
         });
 
+    }
+
+    @Override
+    public void getMoreShopDatas(Context context,int page) {
+        discoverModel.getMoreShopDatas(context, new BaseObserver<MainShopListBean>(context) {
+            @Override
+            protected void onSuccess(MainShopListBean mainShopListBean) {
+
+            }
+        },page);
     }
 
     @Override

@@ -7,7 +7,7 @@ import java.util.List;
  */
 public class DiscoverDatasBean {
 
-    private ShopsBean shops;
+    private MainShopListBean shops;
 
     private List<PromotionsBean> promotions;
 
@@ -15,11 +15,11 @@ public class DiscoverDatasBean {
 
     private List<CategoriesBean> categories;
 
-    public ShopsBean getShops() {
+    public MainShopListBean getShops() {
         return shops;
     }
 
-    public void setShops(ShopsBean shops) {
+    public void setShops(MainShopListBean shops) {
         this.shops = shops;
     }
 
@@ -45,30 +45,6 @@ public class DiscoverDatasBean {
 
     public void setCategories(List<CategoriesBean> categories) {
         this.categories = categories;
-    }
-
-    public static class ShopsBean {
-
-        private PageInfoBean pageInfo;
-
-        private List<ContentBean> content;
-
-        public PageInfoBean getPageInfo() {
-            return pageInfo;
-        }
-
-        public void setPageInfo(PageInfoBean pageInfo) {
-            this.pageInfo = pageInfo;
-        }
-
-        public List<ContentBean> getContent() {
-            return content;
-        }
-
-        public void setContent(List<ContentBean> content) {
-            this.content = content;
-        }
-
     }
 
 }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="72dp"
+    android:layout_height="80dp">
+    
+    <ImageView
+        android:id="@+id/item_icon"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="18dp"
+        android:src="@drawable/beauty"/>
+    <TextView
+        android:id="@+id/item_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_icon"
+        android:gravity="center_horizontal"
+        android:textSize="11sp"
+        android:textColor="#333"
+        android:text="什么哥哥"/>
+</RelativeLayout>

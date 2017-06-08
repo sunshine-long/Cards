@@ -11,9 +11,11 @@ import com.mrkang.since.cards.R;
 import com.mrkang.since.cards.base.BaseActivity;
 import com.mrkang.since.cards.fragment.DiscoverFragment;
 import com.mrkang.since.cards.fragment.MainFragment;
+import com.mrkang.since.cards.fragment.MineFragment;
 import com.mrkang.since.cards.model.DiscoverModel;
 import com.mrkang.since.cards.presenter.DiscoverPresenter;
 import com.mrkang.since.cards.presenter.MainPresenter;
+import com.mrkang.since.cards.presenter.MinePresenter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,6 +37,8 @@ public class MainActivity extends BaseActivity{
     private MainPresenter mainPresenter;
     private DiscoverFragment discoverFragment;
     private DiscoverPresenter discoverPresenter;
+    private MineFragment mineFragment;
+    private MinePresenter minePresenter;
 
     @Override
     protected void bindview() {
@@ -68,7 +72,11 @@ public class MainActivity extends BaseActivity{
                         addOrShowFragment(getSupportFragmentManager().beginTransaction(),discoverFragment);
                         break;
                     case R.id.radio_button_profile:
-                        showShortToast("我的");
+                        if (mineFragment == null){
+                            mineFragment = new MineFragment();
+                        }
+                        minePresenter = new MinePresenter(MainActivity.this,mineFragment);
+                        addOrShowFragment(getSupportFragmentManager().beginTransaction(),mineFragment);
                         break;
                 }
             }

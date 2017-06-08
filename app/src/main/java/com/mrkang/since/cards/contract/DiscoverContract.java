@@ -4,8 +4,8 @@ import android.content.Context;
 
 import com.mrkang.since.cards.base.BasePresenter;
 import com.mrkang.since.cards.base.BaseView;
-import com.mrkang.since.cards.bean.ContentBean;
-import com.mrkang.since.cards.bean.DiscoverDatasBean;
+import com.mrkang.since.cards.bean.CategoriesBean;
+import com.mrkang.since.cards.bean.MainShopListBean;
 import com.mrkang.since.cards.bean.PromotionsBean;
 
 import java.util.List;
@@ -16,13 +16,14 @@ import java.util.List;
 
 public interface DiscoverContract {
     interface View extends BaseView<Presenter> {
-        void setDisCoverDatas(DiscoverDatasBean datas);
-        void initShopListView(List<ContentBean> lists);
+        void initShopListView(MainShopListBean shopListBean);
         void initViwPager(List<PromotionsBean> mAdsViewList);
+        void initGridViewPage( List<CategoriesBean> mainTopDatas);
+        void loadMoreShop();
 
     }
     interface Presenter extends BasePresenter{
         void getDisCoverDatas(Context context);
-        void getDisCoverShopDatas(Context context);
+        void getMoreShopDatas(Context context,int page);
     }
 }
